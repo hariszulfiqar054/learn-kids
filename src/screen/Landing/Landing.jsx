@@ -10,12 +10,16 @@ import {
 import { window, color } from "../../constants/theme";
 import LetterCard from "../../components/LetterCard";
 import WordCard from "../../components/WordCard";
+import HomeBtn from "../../components/HomeBtn";
 
 const { width, height } = window;
 
 const Landing = () => {
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={require("../../../assets/bg1.jpg")}
+      style={styles.container}
+    >
       <View style={{ borderColor: "#fff", borderWidth: 3, borderRadius: 8 }}>
         <ImageBackground
           style={styles.bgImage}
@@ -29,9 +33,12 @@ const Landing = () => {
             <LetterCard />
             <Text style={styles.txt}>letters</Text>
           </View>
+          <View style={{ position: "absolute", top: -14, right: -8 }}>
+            <HomeBtn />
+          </View>
         </ImageBackground>
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 

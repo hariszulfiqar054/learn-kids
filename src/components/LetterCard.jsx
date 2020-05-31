@@ -17,9 +17,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fcf8e8",
     width: 170,
     height: 210,
-
     borderColor: color.primary,
     borderWidth: 3,
     borderRadius: 10,
+    shadowColor: color.black,
+    shadowOpacity: 0.6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 9,
   },
 });
