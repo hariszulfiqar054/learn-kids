@@ -1,22 +1,26 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { color } from "../constants/theme";
 
-const WordCard = ({ style }) => {
+const WordCard = ({ style, upper, lower, img, clr }) => {
+  const l = "../../assets/words/a.jpg";
+  // console.log(img, l);
+
   return (
-    <View style={[styles.container, style]}>
+    <TouchableOpacity style={[styles.container, style]}>
       <View style={styles.uperContainer}>
         <View style={styles.separator}></View>
         <View style={styles.separator}></View>
         <View style={styles.separator}></View>
       </View>
       <View style={styles.txtContainer}>
-        <Text style={{ textAlign: "center" }}>
-          <Text style={styles.txt}>A</Text>
-          <Text style={{ fontSize: 70 }}> a</Text>
+        <Text style={[styles.d3Text, { color: clr }]}>
+          <Text style={styles.txt}>{upper}</Text>
+          <Text style={{ fontSize: 65 }}> {lower}</Text>
         </Text>
       </View>
-    </View>
+      <Image style={styles.img} source={require(l)} />
+    </TouchableOpacity>
   );
 };
 
@@ -24,7 +28,7 @@ export default WordCard;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fcf8e8",
+    backgroundColor: color.white,
     width: 170,
     height: 210,
     borderColor: color.primary,
@@ -47,10 +51,26 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   txt: {
-    fontSize: 85,
+    fontSize: 83,
   },
   txtContainer: {
     position: "relative",
     bottom: 90,
+  },
+  d3Text: {
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "#ff847c",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
+  },
+  img: {
+    width: 105,
+    height: 110,
+    position: "absolute",
+    top: "40%",
+    // right: 50,
+    left: 25,
   },
 });
