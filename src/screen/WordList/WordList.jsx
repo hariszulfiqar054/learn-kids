@@ -15,10 +15,11 @@ import { width as w, height as h } from "../../util/dimension";
 import { wordListData } from "./wordsData";
 const { width, height } = window;
 
-const WordList = () => {
+const WordList = ({ navigation }) => {
   const _renderItem = ({ item, index }) => {
     return (
       <WordCard
+        navigation={navigation}
         upper={item?.upper}
         lower={item?.lower}
         clr={item?.clr}

@@ -7,16 +7,20 @@ import WordDetail from "../screen/WordDetail/WordDetail";
 const Stack = createStackNavigator();
 const MyAppStack = () => {
   return (
-    <WordDetail />
-    // <NavigationContainer>
-    //   <Stack.Navigator>
-    //     <Stack.Screen
-    //       name="wordlist"
-    //       component={WordList}
-    //       options={{ headerShown: false }}
-    //     />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="wordList"
+          component={WordList}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="wordDetail"
+          component={WordDetail}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 export default MyAppStack;

@@ -3,12 +3,14 @@ export const wordListData = [
     upper: "A",
     lower: "a",
     clr: "#a8df65",
+    name: "apple",
     img: "../../assets/words/a.jpg",
   },
   {
     upper: "B",
     lower: "b",
     clr: "#fe8a71",
+    name: "ball",
     img: "../../assets/words/b.jpg",
   },
   {

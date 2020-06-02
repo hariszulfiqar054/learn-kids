@@ -2,12 +2,18 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { color } from "../constants/theme";
 
-const WordCard = ({ style, upper, lower, img, clr }) => {
-  // console.log(lower);
-  const l = "../../assets/words/a.jpg";
-
+const WordCard = ({ style, upper, lower, img, clr, navigation }) => {
   return (
-    <TouchableOpacity style={[styles.container, style]}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate("wordDetail", {
+          lower: lower,
+          upper: upper,
+          color: clr,
+        })
+      }
+      style={[styles.container, style]}
+    >
       <View style={styles.uperContainer}>
         <View style={styles.separator}></View>
         <View style={styles.separator}></View>
@@ -19,7 +25,7 @@ const WordCard = ({ style, upper, lower, img, clr }) => {
           <Text style={{ fontSize: 65 }}> {lower}</Text>
         </Text>
       </View>
-      <Image style={styles.img} source={require(l)} />
+      <Image style={styles.img} />
     </TouchableOpacity>
   );
 };

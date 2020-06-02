@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { color } from "../../../constants/theme";
 import { width, height } from "../../../util/dimension";
 
-const WordDetailCard = () => {
+const WordDetailCard = ({ upper, lower, clr }) => {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
@@ -13,9 +13,9 @@ const WordDetailCard = () => {
           <View style={styles.separator}></View>
         </View>
         <View style={{ position: "relative", top: -120 }}>
-          <Text style={styles.d3Text}>
-            <Text style={{ fontSize: 110 }}>A</Text>
-            <Text style={{ fontSize: 80 }}> a</Text>
+          <Text style={[styles.d3Text, { color: clr }]}>
+            <Text style={{ fontSize: 110 }}>{upper}</Text>
+            <Text style={{ fontSize: 80 }}> {lower}</Text>
           </Text>
         </View>
         <View
@@ -30,12 +30,25 @@ const WordDetailCard = () => {
             style={styles.img}
             source={require("../../../../assets/words/a.jpg")}
           />
-          <Text style={[styles.d3Text, { marginLeft: 10, marginTop: 10 }]}>
+          <Text
+            style={[
+              styles.d3Text,
+              { marginLeft: 10, marginTop: 10, color: clr },
+            ]}
+          >
             <Text style={{ fontSize: 80 }}>a</Text>
 
             <Text style={{ color: "grey", fontSize: 80 }}>pple</Text>
           </Text>
         </View>
+      </View>
+      <View>
+        <Text style={[styles.d3Text, { fontSize: 90, color: clr }]}>
+          {upper}
+        </Text>
+        <Text style={[styles.d3Text, { fontSize: 90, color: clr }]}>
+          {lower}
+        </Text>
       </View>
     </View>
   );
@@ -46,13 +59,15 @@ export default WordDetailCard;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-around",
+    flexDirection: "row",
+    alignItems: "center",
   },
   card: {
     width: width(65),
     height: height(83),
     backgroundColor: color.white,
-    marginLeft: width(6),
+
     borderWidth: 3,
     borderColor: color.primary,
     borderRadius: 12,
