@@ -14,7 +14,7 @@ export default LetterCard;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fcf8e8",
+    backgroundColor: color.white,
     width: 170,
     height: 210,
     borderColor: color.primary,

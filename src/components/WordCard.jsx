@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { color } from "../constants/theme";
 
 const WordCard = ({ style, upper, lower, img, clr }) => {
+  // console.log(lower);
   const l = "../../assets/words/a.jpg";
-  // console.log(img, l);
 
   return (
     <TouchableOpacity style={[styles.container, style]}>
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: color.white,
     width: 170,
-    height: 210,
+    height: 230,
     borderColor: color.primary,
     borderWidth: 3,
     borderRadius: 10,
@@ -66,11 +66,11 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   img: {
-    width: 105,
-    height: 110,
+    width: 95,
+    height: 100,
     position: "absolute",
     top: "40%",
     // right: 50,
-    left: 25,
+    left: 30,
   },
 });
