@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { color } from "../constants/theme";
 
 const WordCard = ({ style, upper, lower, img, clr, navigation }) => {
+  // const temp = require("../../assets/words/a.jpg");
+  // console.log(img, "image");
   return (
     <TouchableOpacity
       onPress={() =>
@@ -25,7 +27,7 @@ const WordCard = ({ style, upper, lower, img, clr, navigation }) => {
           <Text style={{ fontSize: 65 }}> {lower}</Text>
         </Text>
       </View>
-      <Image style={styles.img} />
+      <Image style={styles.img} source={img} />
     </TouchableOpacity>
   );
 };
