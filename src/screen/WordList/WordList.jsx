@@ -24,6 +24,7 @@ const WordList = ({ navigation }) => {
         lower={item?.lower}
         clr={item?.clr}
         img={item?.img}
+        name={item?.name}
       />
     );
   };

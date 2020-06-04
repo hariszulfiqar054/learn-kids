@@ -2,9 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { color } from "../constants/theme";
 
-const WordCard = ({ style, upper, lower, img, clr, navigation }) => {
-  // const temp = require("../../assets/words/a.jpg");
-  // console.log(img, "image");
+const WordCard = ({ style, upper, lower, img, clr, name, navigation }) => {
   return (
     <TouchableOpacity
       onPress={() =>
@@ -12,6 +10,8 @@ const WordCard = ({ style, upper, lower, img, clr, navigation }) => {
           lower: lower,
           upper: upper,
           color: clr,
+          name: name,
+          img: img,
         })
       }
       style={[styles.container, style]}
@@ -74,8 +74,9 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   img: {
-    width: 95,
+    width: 100,
     height: 100,
+    resizeMode: "contain",
     position: "absolute",
     top: "40%",
     // right: 50,

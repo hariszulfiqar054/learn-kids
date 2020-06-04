@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
+import * as Speech from "expo-speech";
 import { color } from "../../../constants/theme";
 import { width, height } from "../../../util/dimension";
 
-const WordDetailCard = ({ upper, lower, clr }) => {
+const WordDetailCard = ({ upper, lower, clr, name, img }) => {
+  useEffect(() => {
+    speak();
+  }, []);
+
+  const speak = () => {
+    Speech.speak(`${lower} for ${name}`, {
+      pitch: 0.8,
+      rate: 0.8,
+    });
+  };
+  const first = name[0];
+  const remaining = name?.substring(1, name?.length);
   return (
     <View style={styles.container}>
       <View style={styles.card}>
@@ -23,22 +36,19 @@ const WordDetailCard = ({ upper, lower, clr }) => {
             flexDirection: "row",
             position: "relative",
             top: -height(35),
-            left: width(10),
+            left: width(0),
           }}
         >
-          <Image
-            style={styles.img}
-            source={require("../../../../assets/words/a.jpg")}
-          />
+          <Image style={styles.img} source={img} />
           <Text
             style={[
               styles.d3Text,
               { marginLeft: 10, marginTop: 10, color: clr },
             ]}
           >
-            <Text style={{ fontSize: 80 }}>a</Text>
+            <Text style={{ fontSize: 80 }}>{first}</Text>
 
-            <Text style={{ color: "grey", fontSize: 80 }}>pple</Text>
+            <Text style={{ color: "grey", fontSize: 80 }}>{remaining}</Text>
           </Text>
         </View>
       </View>
@@ -64,7 +74,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   card: {
-    width: width(65),
+    width: width(70),
     height: height(83),
     backgroundColor: color.white,
 
@@ -92,5 +102,6 @@ const styles = StyleSheet.create({
   img: {
     width: 152,
     height: 160,
+    resizeMode: "contain",
   },
 });
