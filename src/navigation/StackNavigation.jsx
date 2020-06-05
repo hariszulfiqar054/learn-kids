@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Landing from "../screen/Landing/Landing";
 import WordList from "../screen/WordList/WordList";
 import WordDetail from "../screen/WordDetail/WordDetail";
+import LetterDetail from "../screen/LetterDetail/LetterDetail";
 
 const Stack = createStackNavigator();
 const MyAppStack = () => {

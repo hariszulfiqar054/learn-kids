@@ -7,6 +7,7 @@ import {
   StatusBar,
   Platform,
 } from "react-native";
+import Carousel from "react-native-snap-carousel";
 import { window, color } from "../../constants/theme";
 import LetterCard from "../../components/LetterCard";
 import WordCard from "../../components/WordCard";
@@ -14,7 +15,51 @@ import HomeBtn from "../../components/HomeBtn";
 
 const { width, height } = window;
 
-const Landing = () => {
+const Landing = ({ navigation }) => {
+  const lettersStack = [
+    {
+      upper: "B",
+      lower: "b",
+      clr: "#fe8a71",
+      name: "ball",
+      img: require("../../../assets/words/b.jpg"),
+    },
+    {
+      upper: "C",
+      lower: "c",
+      clr: "#ffd31d",
+      name: "cup",
+      img: require("../../../assets/words/c.png"),
+    },
+    {
+      upper: "D",
+      lower: "d",
+      clr: "#ff5200",
+      name: "dog",
+      img: require("../../../assets/words/d.png"),
+    },
+    {
+      upper: "A",
+      lower: "a",
+      clr: "#a8df65",
+      name: "apple",
+      img: require("../../../assets/words/a.jpg"),
+    },
+  ];
+  const _renderItem = ({ item, index }) => {
+    return (
+      <WordCard
+        navigation={navigation}
+        upper={item?.upper}
+        lower={item?.lower}
+        clr={item?.clr}
+        img={item?.img}
+        name={item?.name}
+        pressAble
+      />
+    );
+  };
+
   return (
     <ImageBackground
       source={require("../../../assets/bg1.jpg")}
@@ -26,12 +71,19 @@ const Landing = () => {
           source={require("../../../assets/landingbg.jpg")}
         >
           <View>
-            <WordCard />
-            <Text style={styles.txt}>words</Text>
+            <Carousel
+              data={lettersStack}
+              renderItem={_renderItem}
+              sliderWidth={220}
+              itemWidth={180}
+              layout="stack"
+            />
+
+            <Text style={styles.txt}>letters</Text>
           </View>
           <View>
             <LetterCard />
-            <Text style={styles.txt}>letters</Text>
+            <Text style={styles.txt}>words</Text>
           </View>
           <View style={{ position: "absolute", top: -14, right: -8 }}>
             <HomeBtn />

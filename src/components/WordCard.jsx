@@ -2,17 +2,28 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { color } from "../constants/theme";
 
-const WordCard = ({ style, upper, lower, img, clr, name, navigation }) => {
+const WordCard = ({
+  style,
+  upper,
+  lower,
+  img,
+  clr,
+  name,
+  navigation,
+  pressAble,
+}) => {
   return (
     <TouchableOpacity
       onPress={() =>
-        navigation.navigate("wordDetail", {
-          lower: lower,
-          upper: upper,
-          color: clr,
-          name: name,
-          img: img,
-        })
+        pressAble
+          ? navigation?.navigate("wordList")
+          : navigation.navigate("wordDetail", {
+              lower: lower,
+              upper: upper,
+              color: clr,
+              name: name,
+              img: img,
+            })
       }
       style={[styles.container, style]}
     >
