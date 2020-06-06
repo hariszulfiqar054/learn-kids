@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     elevation: 9,
     alignItems: "center",
+    justifyContent: "center",
   },
   d3Text: {
     textAlign: "center",

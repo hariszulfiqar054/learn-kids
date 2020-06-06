@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 import * as Speech from "expo-speech";
 import { width as w, height as h } from "../../util/dimension";
 import { color } from "../../constants/theme";
@@ -20,7 +20,10 @@ const LetterDetail = ({ navigation, route }) => {
     });
   };
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={require("../../../assets/bg2.jpg")}
+      style={styles.container}
+    >
       <View style={styles.detailContainer}>
         <View>
           <Image style={styles.img} source={img} />
@@ -35,7 +38,7 @@ const LetterDetail = ({ navigation, route }) => {
           <HomeBtn navigation={navigation} />
         </View>
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -44,7 +47,6 @@ export default LetterDetail;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "gold",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -75,6 +77,5 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10,
     fontSize: 70,
-    // fontStyle: 40,
   },
 });

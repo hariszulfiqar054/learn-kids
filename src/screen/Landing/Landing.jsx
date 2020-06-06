@@ -46,6 +46,29 @@ const Landing = ({ navigation }) => {
       img: require("../../../assets/words/a.jpg"),
     },
   ];
+
+  const wordStack = [
+    {
+      word: "cake",
+      img: require("../../../assets/letter/c.png"),
+      clr: "#9852f9",
+    },
+    {
+      word: "horse",
+      img: require("../../../assets/letter/h.png"),
+      clr: "#f67280",
+    },
+    {
+      word: "clock",
+      img: require("../../../assets/letter/c1.png"),
+      clr: "#fa163f",
+    },
+    {
+      word: "mountains",
+      img: require("../../../assets/letter/m1.png"),
+      clr: "#f6d186",
+    },
+  ];
   const _renderItem = ({ item, index }) => {
     return (
       <WordCard
@@ -59,6 +82,16 @@ const Landing = ({ navigation }) => {
       />
     );
   };
+
+  const renderItem = ({ item, index }) => (
+    <LetterCard
+      name={item?.word}
+      img={item?.img}
+      clr={item?.clr}
+      navigation={navigation}
+      pressAble
+    />
+  );
 
   return (
     <ImageBackground
@@ -82,12 +115,18 @@ const Landing = ({ navigation }) => {
             <Text style={styles.txt}>letters</Text>
           </View>
           <View>
-            <LetterCard pressAble navigation={navigation} />
+            <Carousel
+              data={wordStack}
+              renderItem={renderItem}
+              sliderWidth={220}
+              itemWidth={180}
+              layout="stack"
+            />
             <Text style={styles.txt}>words</Text>
           </View>
-          <View style={{ position: "absolute", top: -14, right: -8 }}>
+          {/* <View style={{ position: "absolute", top: -14, right: -8 }}>
             <HomeBtn />
-          </View>
+          </View> */}
         </ImageBackground>
       </View>
     </ImageBackground>
@@ -113,9 +152,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   txt: {
-    fontSize: 25,
+    fontSize: 40,
     color: color.white,
     textAlign: "center",
     fontWeight: "bold",
+    marginTop: -10,
   },
 });

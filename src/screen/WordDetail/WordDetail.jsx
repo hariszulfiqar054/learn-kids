@@ -20,6 +20,7 @@ const WordDetail = ({ navigation, route }) => {
         lower={lower}
         clr={clr}
         img={img}
+        navigation={navigation}
       />
     </ImageBackground>
   );

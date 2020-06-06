@@ -3,8 +3,9 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import * as Speech from "expo-speech";
 import { color } from "../../../constants/theme";
 import { width, height } from "../../../util/dimension";
+import HomeBtn from "../../../components/HomeBtn";
 
-const WordDetailCard = ({ upper, lower, clr, name, img }) => {
+const WordDetailCard = ({ upper, lower, clr, name, img, navigation }) => {
   useEffect(() => {
     speak();
   }, []);
@@ -50,6 +51,9 @@ const WordDetailCard = ({ upper, lower, clr, name, img }) => {
 
             <Text style={{ color: "grey", fontSize: 80 }}>{remaining}</Text>
           </Text>
+        </View>
+        <View style={{ position: "absolute", top: -14, right: -8 }}>
+          <HomeBtn navigation={navigation} />
         </View>
       </View>
       <View>
