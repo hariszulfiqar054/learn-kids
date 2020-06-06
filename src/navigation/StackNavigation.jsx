@@ -4,11 +4,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Landing from "../screen/Landing/Landing";
 import WordList from "../screen/WordList/WordList";
 import WordDetail from "../screen/WordDetail/WordDetail";
+import LetterList from "../screen/LetterList/LetterList";
 import LetterDetail from "../screen/LetterDetail/LetterDetail";
 
 const Stack = createStackNavigator();
 const MyAppStack = () => {
   return (
+    // <LetterList />
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -24,6 +26,16 @@ const MyAppStack = () => {
         <Stack.Screen
           name="wordDetail"
           component={WordDetail}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="letterList"
+          component={LetterList}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="letterDetail"
+          component={LetterDetail}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

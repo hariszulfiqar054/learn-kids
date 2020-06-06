@@ -82,7 +82,7 @@ const Landing = ({ navigation }) => {
             <Text style={styles.txt}>letters</Text>
           </View>
           <View>
-            <LetterCard />
+            <LetterCard pressAble navigation={navigation} />
             <Text style={styles.txt}>words</Text>
           </View>
           <View style={{ position: "absolute", top: -14, right: -8 }}>

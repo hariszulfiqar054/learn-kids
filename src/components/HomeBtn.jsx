@@ -3,9 +3,12 @@ import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { color } from "../constants/theme";
 
-const HomeBtn = () => {
+const HomeBtn = ({ navigation }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      onPress={() => navigation.goBack()}
+      style={styles.container}
+    >
       <View style={{ padding: 6 }}>
         <FontAwesome5 name="home" size={24} color="white" />
       </View>

@@ -9,27 +9,23 @@ import {
 } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { window } from "../../constants/theme";
-import WordCard from "../../components/WordCard";
+import LetterCard from "../../components/LetterCard";
 import HomeBtn from "../../components/HomeBtn";
-
 import { width as w, height as h } from "../../util/dimension";
-import { wordListData } from "./wordsData";
+import { letterData } from "./letterData";
 const { width, height } = window;
 
-const WordList = ({ navigation }) => {
+const LetterList = ({ navigation }) => {
   const _renderItem = ({ item, index }) => {
     return (
-      <WordCard
+      <LetterCard
         navigation={navigation}
-        upper={item?.upper}
-        lower={item?.lower}
         clr={item?.clr}
         img={item?.img}
-        name={item?.name}
+        name={item?.word}
       />
     );
   };
-
   return (
     <ImageBackground
       source={require("../../../assets/bg1.jpg")}
@@ -42,7 +38,7 @@ const WordList = ({ navigation }) => {
         >
           <View style={{ marginTop: h(10) }}>
             <Carousel
-              data={wordListData}
+              data={letterData}
               renderItem={_renderItem}
               sliderWidth={width}
               itemWidth={180}
@@ -57,7 +53,7 @@ const WordList = ({ navigation }) => {
   );
 };
 
-export default WordList;
+export default LetterList;
 
 const styles = StyleSheet.create({
   container: {
