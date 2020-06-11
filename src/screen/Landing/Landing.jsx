@@ -94,6 +94,10 @@ const Landing = ({ navigation }) => {
     />
   );
 
+  const handleMoreGames = () => {
+    navigation.navigate("gameList");
+  };
+
   return (
     <ImageBackground
       source={require("../../../assets/bg1.jpg")}
@@ -129,7 +133,7 @@ const Landing = ({ navigation }) => {
             <HomeBtn />
           </View> */}
           <View style={{ position: "absolute", bottom: 0, left: "42%" }}>
-            <MoreGames />
+            <MoreGames onPress={handleMoreGames} />
           </View>
         </ImageBackground>
       </View>

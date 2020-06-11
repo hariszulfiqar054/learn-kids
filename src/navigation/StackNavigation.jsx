@@ -6,6 +6,7 @@ import WordList from "../screen/WordList/WordList";
 import WordDetail from "../screen/WordDetail/WordDetail";
 import LetterList from "../screen/LetterList/LetterList";
 import LetterDetail from "../screen/LetterDetail/LetterDetail";
+import GameList from "../screen/GameList/GameList";
 
 const Stack = createStackNavigator();
 const MyAppStack = () => {
@@ -36,6 +37,11 @@ const MyAppStack = () => {
         <Stack.Screen
           name="letterDetail"
           component={LetterDetail}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="gameList"
+          component={GameList}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
