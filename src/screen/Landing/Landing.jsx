@@ -12,6 +12,7 @@ import { window, color } from "../../constants/theme";
 import LetterCard from "../../components/LetterCard";
 import WordCard from "../../components/WordCard";
 import HomeBtn from "../../components/HomeBtn";
+import MoreGames from "../../components/MoreGames";
 
 const { width, height } = window;
 
@@ -127,6 +128,9 @@ const Landing = ({ navigation }) => {
           {/* <View style={{ position: "absolute", top: -14, right: -8 }}>
             <HomeBtn />
           </View> */}
+          <View style={{ position: "absolute", bottom: 0, left: "42%" }}>
+            <MoreGames />
+          </View>
         </ImageBackground>
       </View>
     </ImageBackground>

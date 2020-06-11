@@ -2,7 +2,9 @@
   "expo": {
     "name": "learn-kids",
     "slug": "learn-kids",
-    "platforms": ["ios", "android", "web"],
+    "platforms": ["ios", "android"],
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
     "version": "1.0.0",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
@@ -16,7 +18,12 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier":"exp.host.learn-kids"
+    },
+    "android": {
+      "package": "com.yourcompany.yourappname",
+      "versionCode": 1
     }
   }
 }
