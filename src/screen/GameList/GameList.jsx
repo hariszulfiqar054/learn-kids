@@ -22,7 +22,10 @@ export default function GameList({ navigation }) {
           style={styles.bgImage}
           source={require("../../../assets/landingbg.jpg")}
         >
-          <Buttons label="Math Problems" />
+          <Buttons
+            label="Math Problems"
+            onPress={() => navigation.navigate("mathGame")}
+          />
           <Buttons label="Word Pronunciation" />
           <Buttons label="Word Pronunciation" />
         </ImageBackground>
