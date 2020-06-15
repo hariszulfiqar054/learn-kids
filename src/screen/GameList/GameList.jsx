@@ -7,6 +7,7 @@ import {
   StatusBar,
   Platform,
 } from "react-native";
+import HomeBtn from "../../components/HomeBtn";
 import { window } from "../../constants/theme";
 import Buttons from "./components/Buttons";
 
@@ -28,6 +29,9 @@ export default function GameList({ navigation }) {
           />
           <Buttons label="Word Pronunciation" />
           <Buttons label="Word Pronunciation" />
+          <View style={{ position: "absolute", top: -14, right: -8 }}>
+            <HomeBtn navigation={navigation} />
+          </View>
         </ImageBackground>
       </View>
     </ImageBackground>
