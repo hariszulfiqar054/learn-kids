@@ -8,6 +8,7 @@ import LetterList from "../screen/LetterList/LetterList";
 import LetterDetail from "../screen/LetterDetail/LetterDetail";
 import GameList from "../screen/GameList/GameList";
 import MathGame from "../screen/MathProblem/MathProblems";
+import PronountiationGame from "../screen/PronountiationGame/PronountiationGame";
 
 const Stack = createStackNavigator();
 const MyAppStack = () => {
@@ -48,6 +49,11 @@ const MyAppStack = () => {
         <Stack.Screen
           name="mathGame"
           component={MathGame}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="pronountiationGame"
+          component={PronountiationGame}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

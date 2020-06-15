@@ -53,7 +53,7 @@ const MathProblems = ({ navigation }) => {
       setResult("correct");
       setAnswer(null);
       generateQuestion();
-    } else setResult("in correct");
+    } else setResult("In correct");
   };
   return (
     <ImageBackground
@@ -98,7 +98,7 @@ const MathProblems = ({ navigation }) => {
                       color:
                         result === "correct"
                           ? "#21bf73"
-                          : result === "in correct"
+                          : result === "In correct"
                           ? "red"
                           : "#ff7315",
                     },

@@ -27,7 +27,10 @@ export default function GameList({ navigation }) {
             label="Math Problems"
             onPress={() => navigation.navigate("mathGame")}
           />
-          <Buttons label="Word Pronunciation" />
+          <Buttons
+            label="Word Pronunciation"
+            onPress={() => navigation.navigate("pronountiationGame")}
+          />
           <Buttons label="Word Pronunciation" />
           <View style={{ position: "absolute", top: -14, right: -8 }}>
             <HomeBtn navigation={navigation} />
