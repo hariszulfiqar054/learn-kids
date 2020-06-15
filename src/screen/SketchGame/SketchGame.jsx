@@ -6,13 +6,15 @@ import {
   ImageBackground,
   StatusBar,
   Platform,
+  TouchableOpacity,
 } from "react-native";
+import Signature from "react-native-signature-canvas";
 import HomeBtn from "../../components/HomeBtn";
-import { window } from "../../constants/theme";
-import Buttons from "./components/Buttons";
-
+import { window, color } from "../../constants/theme";
 const { width, height } = window;
-export default function GameList({ navigation }) {
+const SketchGame = ({ navigation }) => {
+  const ref = React.createRef();
+
   return (
     <ImageBackground
       source={require("../../../assets/bg1.jpg")}
@@ -23,18 +25,7 @@ export default function GameList({ navigation }) {
           style={styles.bgImage}
           source={require("../../../assets/landingbg.jpg")}
         >
-          <Buttons
-            label="Math Problems"
-            onPress={() => navigation.navigate("mathGame")}
-          />
-          <Buttons
-            label="Sketching Page"
-            onPress={() => navigation.navigate("sketchGame")}
-          />
-          <Buttons
-            label="Word Pronunciation"
-            onPress={() => navigation.navigate("pronountiationGame")}
-          />
+          <Signature ref={ref} descriptionText="Sketch Board" confirmText="" />
           <View style={{ position: "absolute", top: -14, right: -8 }}>
             <HomeBtn navigation={navigation} />
           </View>
@@ -42,7 +33,9 @@ export default function GameList({ navigation }) {
       </View>
     </ImageBackground>
   );
-}
+};
+
+export default SketchGame;
 
 const styles = StyleSheet.create({
   container: {
@@ -56,8 +49,5 @@ const styles = StyleSheet.create({
   bgImage: {
     height: height - 70,
     width: width - 50,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
   },
 });
