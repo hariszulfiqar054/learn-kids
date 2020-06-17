@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "learn-kids",
-    "slug": "learn-kids",
+    "name": "toddleramas",
+    "slug": "toddlerama-22",
     "platforms": ["ios", "android"],
     "privacy": "public",
     "sdkVersion": "36.0.0",

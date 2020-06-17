@@ -132,7 +132,7 @@ const Landing = ({ navigation }) => {
           {/* <View style={{ position: "absolute", top: -14, right: -8 }}>
             <HomeBtn />
           </View> */}
-          <View style={{ position: "absolute", bottom: 0, left: "42%" }}>
+          <View style={{ position: "absolute", bottom: 0, left: "39%" }}>
             <MoreGames onPress={handleMoreGames} />
           </View>
         </ImageBackground>

@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import HomeBtn from "../../components/HomeBtn";
 import { window } from "../../constants/theme";
+import { height as h, width as w } from "../../util/dimension";
 import Buttons from "../GameList/components/Buttons";
 
 const { width, height } = window;
@@ -71,7 +72,9 @@ const MathProblems = ({ navigation }) => {
                 <View>
                   <Text style={styles.d3Text}>
                     <Text style={{ color: "orange" }}>{num1} </Text>
-                    <Text style={{ color: "purple" }}>{op}</Text>
+                    <Text style={{ color: "purple" }}>
+                      {op === "*" ? "x" : op}
+                    </Text>
                     <Text style={{ color: "gold" }}> {num2}</Text>
                     <Text> =</Text>
                   </Text>
@@ -81,7 +84,7 @@ const MathProblems = ({ navigation }) => {
                   style={styles.txtInput}
                   placeholder="Enter Answer"
                   value={answer}
-                  keyboardType="number-pad"
+                  keyboardType="numeric"
                 />
               </View>
               <Buttons
@@ -173,7 +176,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: "40%",
     fontSize: 40,
-    marginTop: 49,
+    marginTop: h(11),
     marginLeft: 12,
   },
   checkAnswer: {
