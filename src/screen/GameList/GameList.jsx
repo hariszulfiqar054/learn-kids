@@ -10,6 +10,7 @@ import {
 import HomeBtn from "../../components/HomeBtn";
 import { window } from "../../constants/theme";
 import Buttons from "./components/Buttons";
+import MoreGamesCard from "../../components/MoreGamesCard";
 
 const { width, height } = window;
 export default function GameList({ navigation }) {
@@ -23,18 +24,25 @@ export default function GameList({ navigation }) {
           style={styles.bgImage}
           source={require("../../../assets/landingbg.jpg")}
         >
-          <Buttons
-            label="Math Problems"
+          <MoreGamesCard
             onPress={() => navigation.navigate("mathGame")}
+            img={require("../../../assets/math.jpg")}
+            label="Math Problems"
+            clr="#43d8c9"
           />
-          <Buttons
+          <MoreGamesCard
+            img={require("../../../assets/sketch.jpg")}
             label="Sketching Page"
             onPress={() => navigation.navigate("sketchGame")}
+            clr="gold"
           />
-          <Buttons
+          <MoreGamesCard
+            img={require("../../../assets/pronoun.jpg")}
             label="Word Pronunciation"
             onPress={() => navigation.navigate("pronountiationGame")}
+            clr="violet"
           />
+
           <View style={{ position: "absolute", top: -14, right: -8 }}>
             <HomeBtn navigation={navigation} />
           </View>
