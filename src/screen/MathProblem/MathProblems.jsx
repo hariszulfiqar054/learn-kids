@@ -64,7 +64,7 @@ const MathProblems = ({ navigation }) => {
       <View style={{ borderColor: "#fff", borderWidth: 3, borderRadius: 8 }}>
         <ImageBackground
           style={styles.bgImage}
-          source={require("../../../assets/landingbg.jpg")}
+          source={require("../../../assets/math.png")}
         >
           {gameStart ? (
             <View>
@@ -92,7 +92,7 @@ const MathProblems = ({ navigation }) => {
                 label="Check Answer"
                 onPress={onCheckAnswer}
               />
-              <View style={{ alignSelf: "center" }}>
+              <View style={{ alignSelf: "center", marginTop: "2%" }}>
                 <Text
                   style={[
                     styles.d3Text,
@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
   bgImage: {
     height: height - 70,
     width: width - 50,
+    resizeMode: "cover",
   },
   startGameBtn: {
     backgroundColor: "violet",
@@ -176,8 +177,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: "40%",
     fontSize: 40,
-    marginTop: h(11),
+    marginTop: h(12.5),
     marginLeft: 12,
+    borderWidth: 1,
   },
   checkAnswer: {
     width: 160,

@@ -10,6 +10,7 @@ import GameList from "../screen/GameList/GameList";
 import MathGame from "../screen/MathProblem/MathProblems";
 import PronountiationGame from "../screen/PronountiationGame/PronountiationGame";
 import Sketch from "../screen/SketchGame/SketchGame";
+import Setting from "../screen/Setting/Setting";
 
 const Stack = createStackNavigator();
 const MyAppStack = () => {
@@ -60,6 +61,11 @@ const MyAppStack = () => {
         <Stack.Screen
           name="sketchGame"
           component={Sketch}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="setting"
+          component={Setting}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

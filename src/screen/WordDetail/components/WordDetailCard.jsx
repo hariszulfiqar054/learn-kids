@@ -4,8 +4,10 @@ import * as Speech from "expo-speech";
 import { color } from "../../../constants/theme";
 import { width, height } from "../../../util/dimension";
 import HomeBtn from "../../../components/HomeBtn";
+import { useSelector } from "react-redux";
 
 const WordDetailCard = ({ upper, lower, clr, name, img, navigation }) => {
+  const language = useSelector((state) => state.language);
   useEffect(() => {
     speak();
   }, []);
@@ -14,6 +16,7 @@ const WordDetailCard = ({ upper, lower, clr, name, img, navigation }) => {
     Speech.speak(`${lower} for ${name}`, {
       pitch: 0.8,
       rate: 0.8,
+      language: language,
     });
   };
   const first = name[0];

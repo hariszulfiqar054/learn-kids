@@ -4,8 +4,10 @@ import * as Speech from "expo-speech";
 import { width as w, height as h } from "../../util/dimension";
 import { color } from "../../constants/theme";
 import HomeBtn from "../../components/HomeBtn";
+import { useSelector } from "react-redux";
 
 const LetterDetail = ({ navigation, route }) => {
+  const language = useSelector((state) => state.language);
   const color = route?.params?.color;
   const name = route?.params?.name;
   const img = route?.params?.img;
@@ -17,6 +19,7 @@ const LetterDetail = ({ navigation, route }) => {
     Speech.speak(`${name}`, {
       pitch: 0.8,
       rate: 0.8,
+      language: language,
     });
   };
   return (

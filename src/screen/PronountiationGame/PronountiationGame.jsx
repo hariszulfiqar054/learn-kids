@@ -12,16 +12,19 @@ import * as Speech from "expo-speech";
 import HomeBtn from "../../components/HomeBtn";
 import { window, color } from "../../constants/theme";
 import Buttons from "../GameList/components/Buttons";
+import { useSelector } from "react-redux";
 
 const { width, height } = window;
 
 export default function PronountiationGame({ navigation }) {
+  const language = useSelector((state) => state.language);
   const [input, setInput] = useState("");
 
   useEffect(() => {
     Speech.speak("Hi i'm your pronunciation instructor", {
       pitch: 0.8,
       rate: 0.8,
+      language: language,
     });
   }, []);
 
@@ -30,12 +33,14 @@ export default function PronountiationGame({ navigation }) {
       Speech.speak(input, {
         pitch: 0.8,
         rate: 0.8,
+        language: language,
       });
       setInput(null);
     } else {
       Speech.speak("Text field is empty", {
         pitch: 0.8,
         rate: 0.8,
+        language: language,
       });
     }
   };
