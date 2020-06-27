@@ -4,12 +4,13 @@ import {
   Text,
   View,
   ImageBackground,
+  Image,
   StatusBar,
   Platform,
   TextInput,
 } from "react-native";
 import HomeBtn from "../../components/HomeBtn";
-import { window } from "../../constants/theme";
+import { window, color } from "../../constants/theme";
 import { height as h, width as w } from "../../util/dimension";
 import Buttons from "../GameList/components/Buttons";
 
@@ -62,7 +63,7 @@ const MathProblems = ({ navigation }) => {
       style={styles.container}
     >
       <View style={{ borderColor: "#fff", borderWidth: 3, borderRadius: 8 }}>
-        <ImageBackground
+        <View
           style={styles.bgImage}
           source={require("../../../assets/math.png")}
         >
@@ -107,15 +108,19 @@ const MathProblems = ({ navigation }) => {
                     },
                   ]}
                 >
-                  Status: {result}
+                  {"Status"?.toUpperCase()}: {result?.toUpperCase()}
                 </Text>
               </View>
             </View>
           ) : (
-            <View>
+            <View style={{ borderWidth: 1, flex: 1 }}>
               <Text style={[styles.d3Text, { fontSize: 50, color: "#ffa41b" }]}>
                 Start The Game
               </Text>
+              <Image
+                style={{ width: 300, height: 150, alignSelf: "center" }}
+                source={require("../../../assets/math.jpg")}
+              />
             </View>
           )}
 
@@ -135,7 +140,7 @@ const MathProblems = ({ navigation }) => {
           <View style={{ position: "absolute", top: -14, right: -8 }}>
             <HomeBtn navigation={navigation} />
           </View>
-        </ImageBackground>
+        </View>
       </View>
     </ImageBackground>
   );
@@ -155,7 +160,10 @@ const styles = StyleSheet.create({
   bgImage: {
     height: height - 70,
     width: width - 50,
-    resizeMode: "cover",
+    backgroundColor: color.white,
+    borderWidth: 2,
+    borderColor: color.primary,
+    // resizeMode: "cover",
   },
   startGameBtn: {
     backgroundColor: "violet",
@@ -175,11 +183,16 @@ const styles = StyleSheet.create({
   },
   txtInput: {
     backgroundColor: "white",
-    height: "40%",
+    height: "45%",
     fontSize: 40,
-    marginTop: h(12.5),
+    marginTop: h(7),
     marginLeft: 12,
     borderWidth: 1,
+    alignSelf: "center",
+    borderRadius: 12,
+    padding: 2,
+    justifyContent: "center",
+    alignItems: "center",
   },
   checkAnswer: {
     width: 160,
